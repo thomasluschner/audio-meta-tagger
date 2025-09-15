@@ -1,8 +1,55 @@
-@@ .. @@
-   "scripts": {
-     "build": "tsc",
-     "lint": "eslint . --ext .ts,.tsx",
-     "start": "npm run build && electron-forge start",
--    "package": "npm run build && electron-forge package",
-+    "package": "npm run build && electron-forge package --platform=darwin",
-     "make": "npm run build && electron-forge make",
+{
+  "name": "audio-metadata-app",
+  "productName": "Audio Metadata Manager",
+  "version": "1.0.0",
+  "description": "Automatically enhance audio file metadata from Beatport and Bandcamp",
+  "main": ".vite/build/main.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint . --ext .ts,.tsx",
+    "start": "npm run build && electron-forge start",
+    "package": "npm run build && electron-forge package --platform=darwin",
+    "make": "npm run build && electron-forge make",
+    "publish": "electron-forge publish",
+    "dev": "electron-forge start"
+  },
+  "keywords": [
+    "audio",
+    "metadata",
+    "beatport",
+    "bandcamp",
+    "mp3",
+    "flac"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "config": {
+    "forge": "./forge.config.js"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron-forge/plugin-vite": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "@types/node": "^20.14.8",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "electron": "31.0.2",
+    "eslint": "^8.57.0",
+    "typescript": "~4.5.4",
+    "vite": "^5.0.12"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "^8.2.0",
+    "music-metadata": "^7.14.0",
+    "node-id3": "^0.2.6"
+  }
+}
