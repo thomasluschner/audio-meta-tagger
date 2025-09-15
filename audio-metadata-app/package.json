@@ -1,0 +1,8 @@
+@@ .. @@
+   "scripts": {
+     "build": "tsc",
+     "lint": "eslint . --ext .ts,.tsx",
+     "start": "npm run build && electron-forge start",
+-    "package": "npm run build && electron-forge package",
++    "package": "npm run build && electron-forge package --platform=darwin",
+     "make": "npm run build && electron-forge make",
